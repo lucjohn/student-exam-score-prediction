@@ -45,3 +45,9 @@ def evaluate_model(X_training_set, Y_Training_set, X_test_set, Y_test_set, model
         raise CustomException(e, sys)
     
 
+def load_object(file_path):
+    try:
+        with open(file_path, 'rb') as file_obj:
+            return dill.load(file_obj)
+    except Exception as e:
+        raise CustomException(e, sys)
